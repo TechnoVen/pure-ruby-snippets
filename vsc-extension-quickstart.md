@@ -1,20 +1,21 @@
-# Welcome to your VS Code Extension
+# Welcome to Pure Ruby Snippets (2025 refresh)
 
-## What's in the folder
-* This folder contains all of the files necessary for your extension
-* `package.json` - this is the manifest file that defines the location of the snippet file
-and specifies the language of the snippets
-* `snippets/snippets.json` - the file containing all snippets 
+## What's in this folder
+* `package.json` – extension manifest that points to the snippet folders under `pure-ruby-snippets/`.
+* `pure-ruby-snippets/snippets/` – Ruby, testing, Rails bridge, and deprecated snippet JSON files.
+* `pure-ruby-snippets/MIGRATION.md` – quick guide for moving away from the legacy bundle.
+* `README.md` – overview of the project plus testing steps.
+* `LICENSE.md` – MIT license for the 2025 release.
 
-## Get up and running straight away
-* press `F5` to open a new window with your extension loaded
-* create a new file with a file name suffix matching your language
-* verify that your snippets are proposed on intellisense
+## Get up and running
+* Press `F5` to launch a new Extension Development Host window in VS Code.
+* Create a file that ends in `.rb` and trigger IntelliSense (`Ctrl+Space` / `Cmd+Space`) to see the snippets.
+* Reload the dev window (`Cmd+R` / `Ctrl+R`) whenever you edit the snippet files.
 
-## Make changes
-* you can relaunch the extension from the debug toolbar after making changes to the files listed above
-* you can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes
+## Make changes safely
+* Update snippet JSON files, then run `npx @vscode/vsce package` to confirm they still package.
+* Use the upcoming `validate-snippets.js` script (or `npx @vscode/test-cli`) to lint snippet JSON before publishing.
 
-## Install your extension
-* To start using your extension with Visual Studio Code copy it into the <user home>/.vscode/extensions folder and restart Code.
-* To share your extension with the world, read on https://code.visualstudio.com/docs about publishing an extension.
+## Install or publish
+* Local install: run `npx @vscode/vsce package` and install the generated `.vsix` through the VS Code Extensions view.
+* Marketplace: follow the latest guide at https://code.visualstudio.com/api/working-with-extensions/publishing-extension and use `@vscode/vsce` (2025 recommended) with a Personal Access Token.
