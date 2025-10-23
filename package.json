@@ -3,7 +3,7 @@
     "displayName": "Pure Ruby Snippets",
     "description": "It is a Ruby snippet collection with structure, deprecations, and Ruby 3.x guidance.",
     "version": "1.0.0",
-    "publisher": "TechnoVen // Ahmed Nadir",
+    "publisher": "technoven",
     "engines": {
         "vscode": "^1.70.0"
     },
