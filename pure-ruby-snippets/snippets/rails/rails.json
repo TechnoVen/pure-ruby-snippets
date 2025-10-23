@@ -8,13 +8,5 @@
             "end"
         ],
         "description": "Rails 7 controller action using keyword arguments and modern render syntax"
-    },
-    "Rails Legacy Notice": {
-        "prefix": "rails-legacy-note",
-        "body": [
-            "# DEPRECATED: Rails snippets live in legacy extension.",
-            "# Install the upcoming rails-snippets extension for framework-specific coverage."
-        ],
-        "description": "Reminder to migrate to the dedicated rails-snippets extension when available"
     }
 }

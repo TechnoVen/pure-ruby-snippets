@@ -12,7 +12,6 @@
     ],
     "keywords": [
         "ruby",
-        "legacy",
         "snippets"
     ],
     "homepage": "https://github.com/TechnoVen/ruby-snippet",
@@ -33,10 +32,6 @@
             {
                 "language": "ruby",
                 "path": "./pure-ruby-snippets/snippets/testing/testing.json"
-            },
-            {
-                "language": "ruby",
-                "path": "./pure-ruby-snippets/snippets/deprecated/legacy.json"
             }
         ]
     }

@@ -2,8 +2,7 @@
 
 ## What's in this folder
 * `package.json` – extension manifest that points to the snippet folders under `pure-ruby-snippets/`.
-* `pure-ruby-snippets/snippets/` – Ruby, testing, Rails bridge, and deprecated snippet JSON files.
-* `pure-ruby-snippets/MIGRATION.md` – quick guide for moving away from the legacy bundle.
+* `pure-ruby-snippets/snippets/` – Ruby, testing, and Rails bridge snippet JSON files.
 * `README.md` – overview of the project plus testing steps.
 * `LICENSE.md` – MIT license for the 2025 release.
 

@@ -7,15 +7,12 @@ It stayed frozen for 9 years. I forked it, cleaned it up, and shipped it again u
 ## What You Get
 - Modern Ruby 3 examples for hashes, pattern matching, data classes, fibers, and lazy enums.
 - Testing helpers for RSpec and Minitest with clear tab stops.
-- A deprecated bundle that keeps every classic snippet, each one marked so you know it is old code.
 - Notes that point you to new Rails, Sinatra, and Hanami packs when they are ready.
 
 ## Folder Guide
 - `pure-ruby-snippets/snippets/core/core.json` – modern Ruby helpers you should use today.
 - `pure-ruby-snippets/snippets/testing/testing.json` – ready blocks for RSpec and Minitest.
 - `pure-ruby-snippets/snippets/rails/rails.json` – short bridge snippets plus reminders to install the Rails pack later.
-- `pure-ruby-snippets/snippets/deprecated/legacy.json` – every legacy snippet with a clear DEPRECATED tag.
-- `pure-ruby-snippets/MIGRATION.md` – quick steps for moving away from the old bundle.
 
 ## How To Test
 1. Open this folder in VS Code.

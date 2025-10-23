@@ -46,5 +46,682 @@
             "${1:collection}.lazy.map { _1 ${2:* 2} }.force"
         ],
         "description": "Lazy enumerator pipeline using numbered parameters"
+    },
+    "Ruby Add Marker": {
+        "prefix": "#",
+        "body": "# =>",
+        "description": "Add '# =>' Marker"
+    },
+    "Ruby Hash Pair Key Value": {
+        "prefix": ":",
+        "body": "${1:key}: ${2:value}${3:, }",
+        "description": "Hash pair using modern keyword syntax"
+    },
+    "Ruby Include Comparable": {
+        "prefix": "Comp",
+        "body": [
+            "include Comparable",
+            "",
+            "def <=>(other)",
+            "  $0",
+            "end"
+        ],
+        "description": "include Comparable .."
+    },
+    "Ruby Dir": {
+        "prefix": "Dir",
+        "body": "Dir[${1:\"${2:glob/**/*.rb}\"}]",
+        "description": "Dir[\"..\"]"
+    },
+    "Ruby Dir Glob File": {
+        "prefix": "Dirg",
+        "body": "Dir.glob(${1:\"${2:dir/glob/*}\"}) { |${3:file}| $0 }",
+        "description": "Dir.glob(\"..\") { |file| .. }"
+    },
+    "Ruby Include Enumerable": {
+        "prefix": "Enum",
+        "body": [
+            "include Enumerable",
+            "",
+            "def each(&block)",
+            "  $0",
+            "end"
+        ],
+        "description": "include Enumerable .."
+    },
+    "Ruby File Read": {
+        "prefix": "File",
+        "body": "File.read(${1:\"${2:path/to/file}\"})",
+        "description": "File.read(\"..\")"
+    },
+    "Ruby File Foreach Line": {
+        "prefix": "Filef",
+        "body": "File.foreach(${1:\"${2:path/to/file}\"}) { |${3:line}| $0 }",
+        "description": "File.foreach (\"..\") { |line| .. }"
+    },
+    "Ruby Extend Forwardable": {
+        "prefix": "Forw",
+        "body": "extend Forwardable",
+        "description": "extend Forwardable"
+    },
+    "Ruby Hash New Hash Key Hash Key": {
+        "prefix": "Hash",
+        "body": "Hash.new { |${1:hash}, ${2:key}| ${1:hash}[${2:key}] = $0 }",
+        "description": "Hash.new { |hash, key| hash[key] = .. }"
+    },
+    "Ruby Marshal Dump File": {
+        "prefix": "Md",
+        "body": "File.open(${1:\"${2:path/to/file}.dump\"}, \"wb\") { |${3:file}| Marshal.dump(${4:obj}, ${3:file}) }",
+        "description": "Marshal.dump(.., file)"
+    },
+    "Ruby Marshal Load Obj": {
+        "prefix": "Ml",
+        "body": "File.open(${1:\"${2:path/to/file}.dump\"}, \"rb\") { |${3:file}| Marshal.load(${3:file}) }",
+        "description": "Marshal.load(obj)"
+    },
+    "Ruby Pstore New": {
+        "prefix": "Pn-",
+        "body": "PStore.new(${1:\"${2:file_name.pstore}\"})",
+        "description": "PStore.new( .. )"
+    },
+    "Ruby Yaml Dump File": {
+        "prefix": "Yd-",
+        "body": "File.open(${1:\"${2:path/to/file}.yaml\"}, \"w\") { |${3:file}| YAML.dump(${4:obj}, ${3:file}) }",
+        "description": "YAML.dump(.., file)"
+    },
+    "Ruby Yaml Load File": {
+        "prefix": "Yl-",
+        "body": "File.open(${1:\"${2:path/to/file}.yaml\"}) { |${3:file}| YAML.load(${3:file}) }",
+        "description": "YAML.load(file)"
+    },
+    "Ruby All E": {
+        "prefix": "all",
+        "body": "all? { |${1:e}| $0 }",
+        "description": "all? { |e| .. }"
+    },
+    "Ruby Alias Method": {
+        "prefix": "am",
+        "body": "alias_method :${1:new_name}, :${0:old_name}",
+        "description": "alias_method .."
+    },
+    "Ruby Any E": {
+        "prefix": "any",
+        "body": "any? { |${1:e}| $0 }",
+        "description": "any? { |e| .. }"
+    },
+    "Ruby Application": {
+        "prefix": "app",
+        "body": [
+            "if __FILE__ == \\$PROGRAM_NAME",
+            "  $0",
+            "end"
+        ],
+        "description": "application { .. }"
+    },
+    "Ruby Arry New": {
+        "prefix": "arr",
+        "body": [
+            "Array.new(${1:len,val})",
+            "$0"
+        ],
+        "description": "Arry.new(...)"
+    },
+    "Ruby Array New Index": {
+        "prefix": "arri",
+        "body": "Array.new(${1:len}) { |${2:i}| $0 }",
+        "description": "Array.new( .. ) { |index| .. }"
+    },
+    "Ruby Assert Nothing Raised": {
+        "prefix": "asnr",
+        "body": "assert_nothing_raised(${1:Exception}) { $0 }",
+        "description": "assert_nothing_raised(..) { .. }"
+    },
+    "Ruby Assert Nothing Thrown": {
+        "prefix": "asnt",
+        "body": "assert_nothing_thrown { $0 }",
+        "description": "assert_nothing_thrown { .. }"
+    },
+    "Ruby Assert Raise": {
+        "prefix": "asr",
+        "body": "assert_raise(${1:Exception}) { $0 }",
+        "description": "assert_raise(..) { .. }"
+    },
+    "Ruby Assert Throws": {
+        "prefix": "ast",
+        "body": "assert_throws(:${1:expected}) { $0 }",
+        "description": "assert_throws(..) { .. }"
+    },
+    "Ruby Begin Rescue End": {
+        "prefix": "beg",
+        "body": [
+            "begin",
+            "  $1",
+            "rescue ${2:ExceptionName}",
+            "  $3",
+            "end"
+        ],
+        "description": "begin \u2026 rescue \u2026 end"
+    },
+    "Ruby Benchmark Bmbm Do End": {
+        "prefix": "bm-",
+        "body": [
+            "TESTS = ${1:10_000}",
+            "Benchmark.bmbm do |results|",
+            "  $0",
+            "end"
+        ],
+        "description": "Benchmark.bmbm do .. end"
+    },
+    "Ruby Case End": {
+        "prefix": "case",
+        "body": [
+            "case ${1:object}",
+            "when ${2:condition}",
+            "  $0",
+            "end"
+        ],
+        "description": "case \u2026 end"
+    },
+    "Ruby Classify E": {
+        "prefix": "cl",
+        "body": "classify { |${1:e}| $0 }",
+        "description": "classify { |e| .. }"
+    },
+    "Ruby Class End": {
+        "prefix": "cla",
+        "body": [
+            "class ${1:ClassName}",
+            "  $0",
+            "end"
+        ],
+        "description": "class .. end"
+    },
+    "Ruby Class Self End": {
+        "prefix": "clase",
+        "body": [
+            "class << ${1:self}",
+            "  $0",
+            "end"
+        ],
+        "description": "class << self .. end"
+    },
+    "Ruby Class From Name": {
+        "prefix": "clafn",
+        "body": "split(\"::\").inject(Object) { |par, const| par.const_get(const) }",
+        "description": "class_from_name()"
+    },
+    "Ruby Classname Struct Do End": {
+        "prefix": "clast",
+        "body": [
+            "$1 = Struct.new(:${2:attr_names}) do",
+            "  def ${3:method_name}",
+            "    $0",
+            "  end",
+            "",
+            "",
+            "end"
+        ],
+        "description": "ClassName = Struct .. do .. end"
+    },
+    "Ruby Collect E": {
+        "prefix": "col",
+        "body": "collect { |${1:e}| $0 }",
+        "description": "collect { |e| .. }"
+    },
+    "Ruby Deep Copy": {
+        "prefix": "deec",
+        "body": "Marshal.load(Marshal.dump(${0:obj_to_copy}))",
+        "description": "deep_copy(..)"
+    },
+    "Ruby Def End": {
+        "prefix": "def",
+        "body": [
+            "def ${1:method_name}",
+            "  $0",
+            "end"
+        ],
+        "description": "def \u2026 end"
+    },
+    "Ruby Def Delegator": {
+        "prefix": "defd",
+        "body": "def_delegator :${1:@del_obj}, :${2:del_meth}, :${3:new_name}",
+        "description": "def_delegator .."
+    },
+    "Ruby Def Delegators": {
+        "prefix": "defds",
+        "body": "def_delegators :${1:@del_obj}, :${0:del_methods}",
+        "description": "def_delegators .."
+    },
+    "Ruby Def Initialize End": {
+        "prefix": "defi",
+        "body": [
+            "def initialize${1:(${2:argument})}",
+            "  @${2:argument} = ${2:argument}$0",
+            "end"
+        ],
+        "description": "def initialize .. end"
+    },
+    "Ruby Def Method Missing End": {
+        "prefix": "defmm",
+        "body": [
+            "def method_missing(meth, *args, &blk)",
+            "  $0",
+            "end"
+        ],
+        "description": "def method_missing .. end"
+    },
+    "Ruby Def Self End": {
+        "prefix": "defs",
+        "body": [
+            "def self.${1:class_method_name}",
+            "  $0",
+            "end"
+        ],
+        "description": "def self .. end"
+    },
+    "Ruby Def Test End": {
+        "prefix": "deft",
+        "body": [
+            "def test_${1:case_name}",
+            "  $0",
+            "end"
+        ],
+        "description": "def test_ .. end"
+    },
+    "Ruby Delete If E": {
+        "prefix": "deli",
+        "body": "delete_if { |${1:e}| $0 }",
+        "description": "delete_if { |e| .. }"
+    },
+    "Ruby Detect E": {
+        "prefix": "det",
+        "body": "detect { |${1:e}| $0 }",
+        "description": "detect { |e| .. }"
+    },
+    "Ruby Directory": {
+        "prefix": "dir",
+        "body": "File.dirname(__FILE__)",
+        "description": "directory()"
+    },
+    "Ruby Insert Do End": {
+        "prefix": "do",
+        "body": [
+            "do",
+            "  $0",
+            "end"
+        ],
+        "description": "Insert do \u2026 end"
+    },
+    "Ruby Insert Do Variable End": {
+        "prefix": "dop",
+        "body": [
+            "do |${1:variable}|",
+            "  $0",
+            "end"
+        ],
+        "description": "Insert do |variable| \u2026 end"
+    },
+    "Ruby Each E": {
+        "prefix": "ea",
+        "body": "each { |${1:e}| $0 }",
+        "description": "each { |e| .. }"
+    },
+    "Ruby Each Byte Byte": {
+        "prefix": "eab",
+        "body": "each_byte { |${1:byte}| $0 }",
+        "description": "each_byte { |byte| .. }"
+    },
+    "Ruby Each Char Chr": {
+        "prefix": "eac-",
+        "body": "each_char { |${1:chr}| $0 }",
+        "description": "each_char { |chr| .. }"
+    },
+    "Ruby Each Cons Group": {
+        "prefix": "eac-",
+        "body": "each_cons(${1:2}) { |${2:group}| $0 }",
+        "description": "each_cons(..) { |group| .. }"
+    },
+    "Ruby Each Index I": {
+        "prefix": "eai",
+        "body": "each_index { |${1:i}| $0 }",
+        "description": "each_index { |i| .. }"
+    },
+    "Ruby Each Key Key": {
+        "prefix": "eak",
+        "body": "each_key { |${1:key}| $0 }",
+        "description": "each_key { |key| .. }"
+    },
+    "Ruby Each Line Line": {
+        "prefix": "eal",
+        "body": "each_line$1 { |${2:line}| $0 }",
+        "description": "each_line { |line| .. }"
+    },
+    "Ruby Each Pair Name Val": {
+        "prefix": "eap",
+        "body": "each_pair { |${1:name}, ${2:val}| $0 }",
+        "description": "each_pair { |name, val| .. }"
+    },
+    "Ruby Each Slice Group": {
+        "prefix": "eas-",
+        "body": "each_slice(${1:2}) { |${2:group}| $0 }",
+        "description": "each_slice(..) { |group| .. }"
+    },
+    "Ruby Each Value Val": {
+        "prefix": "eav",
+        "body": "each_value { |${1:val}| $0 }",
+        "description": "each_value { |val| .. }"
+    },
+    "Ruby Each With Index E I": {
+        "prefix": "eawi",
+        "body": "each_with_index { |${1:e}, ${2:i}| $0 }",
+        "description": "each_with_index { |e, i| .. }"
+    },
+    "Ruby Elsif": {
+        "prefix": "elsif",
+        "body": [
+            "elsif ${1:condition}",
+            "  $0"
+        ],
+        "description": "elsif ..."
+    },
+    "Ruby End": {
+        "prefix": "end",
+        "body": "__END__",
+        "description": "__END__"
+    },
+    "Ruby Find E": {
+        "prefix": "fin",
+        "body": "find { |${1:e}| $0 }",
+        "description": "find { |e| .. }"
+    },
+    "Ruby Find All E": {
+        "prefix": "fina",
+        "body": "find_all { |${1:e}| $0 }",
+        "description": "find_all { |e| .. }"
+    },
+    "Ruby Flatten Once": {
+        "prefix": "flao",
+        "body": "inject(Array.new) { |${1:arr}, ${2:a}| ${1:arr}.push(*${2:a}) }",
+        "description": "flatten_once()"
+    },
+    "Ruby Grep Pattern Match": {
+        "prefix": "gre",
+        "body": "grep(${1:/${2:pattern}/}) { |${3:match}| $0 }",
+        "description": "grep(/pattern/) { |match| .. }"
+    },
+    "Ruby Inspect": {
+        "prefix": "i",
+        "body": "inspect",
+        "description": "#inspect"
+    },
+    "Ruby If End": {
+        "prefix": "if",
+        "body": [
+            "if ${1:condition}",
+            "  $0",
+            "end"
+        ],
+        "description": "if \u2026 end"
+    },
+    "Ruby If Else End": {
+        "prefix": "ife",
+        "body": [
+            "if ${1:condition}",
+            "  $2",
+            "else",
+            "  $3",
+            "end"
+        ],
+        "description": "if \u2026 else \u2026 end"
+    },
+    "Ruby Loop": {
+        "prefix": "loo",
+        "body": "loop { $0 }",
+        "description": "loop { .. }"
+    },
+    "Ruby Map E": {
+        "prefix": "map",
+        "body": "map { |${1:e}| $0 }",
+        "description": "map { |e| .. }"
+    },
+    "Ruby Map With Index E I": {
+        "prefix": "mapwi-",
+        "body": "enum_with_index.map { |${1:e}, ${2:i}| $0 }",
+        "description": "map_with_index { |e, i| .. }"
+    },
+    "Ruby Max A B": {
+        "prefix": "max",
+        "body": "max { |a, b| $0 }",
+        "description": "max { |a, b| .. }"
+    },
+    "Ruby Min A B": {
+        "prefix": "min",
+        "body": "min { |a, b| $0 }",
+        "description": "min { |a, b| .. }"
+    },
+    "Ruby Module End": {
+        "prefix": "mod",
+        "body": [
+            "module ${1:ModuleName}",
+            "  $0",
+            "end"
+        ],
+        "description": "module .. end"
+    },
+    "Ruby Module Module Function End": {
+        "prefix": "modf",
+        "body": [
+            "module $1",
+            "  module_function",
+            "",
+            "  $0",
+            "end"
+        ],
+        "description": "module .. module_function .. end"
+    },
+    "Ruby Namespace Do End": {
+        "prefix": "nam",
+        "body": [
+            "namespace :$1 do",
+            "  $0",
+            "end"
+        ],
+        "description": "namespace :.. do .. end"
+    },
+    "Ruby Partition E": {
+        "prefix": "par",
+        "body": "partition { |${1:e}| $0 }",
+        "description": "partition { |e| .. }"
+    },
+    "Ruby Path From Here": {
+        "prefix": "patfh",
+        "body": "File.join(File.dirname(__FILE__), *%w[${1:rel path here}])",
+        "description": "path_from_here( .. )"
+    },
+    "Ruby Attr Reader": {
+        "prefix": "r",
+        "body": "attr_reader :${0:attr_names}",
+        "description": "attr_reader .."
+    },
+    "Ruby Randomize": {
+        "prefix": "ran",
+        "body": "sort_by { rand }",
+        "description": "randomize()"
+    },
+    "Ruby Usr Bin Env Ruby Wku": {
+        "prefix": "rb",
+        "body": "#!/usr/bin/env ruby -wKU",
+        "description": "#!/usr/bin/env ruby -wKU"
+    },
+    "Ruby Reject E": {
+        "prefix": "rej",
+        "body": "reject { |${1:e}| $0 }",
+        "description": "reject { |e| .. }"
+    },
+    "Ruby Results Report": {
+        "prefix": "rep",
+        "body": "results.report(\"${1:name}:\") { TESTS.times { $0 } }",
+        "description": "results.report(..) { .. }"
+    },
+    "Ruby Require": {
+        "prefix": "req",
+        "body": "require '$0'",
+        "description": "require '..'"
+    },
+    "Ruby Require Gem": {
+        "prefix": "reqg-",
+        "body": "require \"$0\"",
+        "description": "require_gem \"..\""
+    },
+    "Ruby Reverse Each E": {
+        "prefix": "reve",
+        "body": "reverse_each { |${1:e}| $0 }",
+        "description": "reverse_each { |e| .. }"
+    },
+    "Ruby Attr Accessor": {
+        "prefix": "rw",
+        "body": "attr_accessor :${0:attr_names}",
+        "description": "attr_accessor .."
+    },
+    "Ruby Scan Match": {
+        "prefix": "sca",
+        "body": "scan(/${1:pattern}/) { |${2:match}| $0 }",
+        "description": "scan(/../) { |match| .. }"
+    },
+    "Ruby Select E": {
+        "prefix": "sel",
+        "body": "select { |${1:e}| $0 }",
+        "description": "select { |e| .. }"
+    },
+    "Ruby Singleton Class": {
+        "prefix": "sinc",
+        "body": "class << self; self end",
+        "description": "singleton_class()"
+    },
+    "Ruby Sort A B": {
+        "prefix": "sor",
+        "body": "sort { |a, b| $0 }",
+        "description": "sort { |a, b| .. }"
+    },
+    "Ruby Sort By E": {
+        "prefix": "sorb",
+        "body": "sort_by { |${1:e}| $0 }",
+        "description": "sort_by { |e| .. }"
+    },
+    "Ruby Task Task Name Dependent Tasks Do End": {
+        "prefix": "tas",
+        "body": [
+            "desc \"${1:Task description}\"",
+            "task ${2:${3:task_name}}: [${4:${5:dependent_tasks}}] do",
+            "  ${0}",
+            "end"
+        ],
+        "description": "Rake task with modern dependency syntax"
+    },
+    "Ruby Require Tc": {
+        "prefix": "ts",
+        "body": [
+            "require \"test/unit\"",
+            "",
+            "require \"tc_${1:test_case_file}\"",
+            "require \"tc_${2:test_case_file}\""
+        ],
+        "description": "require \"tc_..\" .."
+    },
+    "Ruby Unix Filter": {
+        "prefix": "unif",
+        "body": [
+            "ARGF.each_line$1 do |${2:line}|",
+            "  $0",
+            "end"
+        ],
+        "description": "unix_filter { .. }"
+    },
+    "Ruby Unless End": {
+        "prefix": "unless",
+        "body": [
+            "unless ${1:condition}",
+            "  $0",
+            "end"
+        ],
+        "description": "unless \u2026 end"
+    },
+    "Ruby Until End": {
+        "prefix": "until",
+        "body": [
+            "until ${1:condition}",
+            "  $0",
+            "end"
+        ],
+        "description": "until ... end"
+    },
+    "Ruby Usage If": {
+        "prefix": "usai",
+        "body": [
+            "if ARGV.$1",
+            "  abort \"Usage:  #{\\$PROGRAM_NAME} ${2:ARGS_GO_HERE}\"",
+            "end"
+        ],
+        "description": "usage_if()"
+    },
+    "Ruby Usage Unless": {
+        "prefix": "usau",
+        "body": [
+            "unless ARGV.$1",
+            "  abort \"Usage:  #{\\$PROGRAM_NAME} ${2:ARGS_GO_HERE}\"",
+            "end"
+        ],
+        "description": "usage_unless()"
+    },
+    "Ruby Encoding Utf 8": {
+        "prefix": "utf8",
+        "body": "# encoding: ${1:UTF-8}",
+        "description": "# encoding: UTF-8"
+    },
+    "Ruby Attr Writer": {
+        "prefix": "w",
+        "body": "attr_writer :${0:attr_names}",
+        "description": "attr_writer .."
+    },
+    "Ruby When": {
+        "prefix": "when",
+        "body": [
+            "when ${1:condition}",
+            "  $0"
+        ],
+        "description": "when \u2026"
+    },
+    "Ruby While End": {
+        "prefix": "while",
+        "body": [
+            "while ${1:condition}",
+            "  $0",
+            "end"
+        ],
+        "description": "while ... end"
+    },
+    "Ruby Xmlread": {
+        "prefix": "xml-",
+        "body": "REXML::Document.new(File.read(${1:\"${2:path/to/file}\"}))",
+        "description": "xmlread(..)"
+    },
+    "Ruby Xpath": {
+        "prefix": "xpa",
+        "body": [
+            "elements.each(${1:\"${2://XPath}\"}) do |${3:node}|",
+            "  $0",
+            "end"
+        ],
+        "description": "xpath(..) { .. }"
+    },
+    "Ruby Yields": {
+        "prefix": "y",
+        "body": " :yields: ${0:arguments}",
+        "description": ":yields:"
+    },
+    "Ruby Zip Enums Row": {
+        "prefix": "zip",
+        "body": "zip(${1:enums}) { |${2:row}| $0 }",
+        "description": "zip(enums) { |row| .. }"
     }
 }
