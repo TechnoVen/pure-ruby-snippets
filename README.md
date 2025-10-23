@@ -1,25 +1,27 @@
-# ruby-snippet
+# Pure Ruby Snippets
 
-This VS Code snippet extension is converted from the TextMate Ruby bundle
-Original tmbundle: https://github.com/textmate/ruby.tmbundle
-Mirror project: https://github.com/magicwhite/ruby-snippet
+Forked and updated from Ruby Snippets by https://github.com/magicwhite/ruby-snippet.
+That project came from the TextMate Ruby bundle at https://github.com/textmate/ruby.tmbundle.
+It stayed frozen for 9 years. I forked it, cleaned it up, and shipped it again under the MIT license so everyone can keep using it.
 
-## Extension Contents
-- `package.json` — extension manifest that contributes `snippets/snippets.json` for the `ruby` language.
-- `snippets/snippets.json` — 106 Ruby snippets covering class/module scaffolding, Enumerable helpers, file/IO patterns, testing utilities, and metadata headers.
-- `.vscode/launch.json` — debug profile to launch the extension host with this workspace.
-- `vsc-extension-quickstart.md` — stock guide from the VS Code extension generator.
+## What You Get
+- Modern Ruby 3 examples for hashes, pattern matching, data classes, fibers, and lazy enums.
+- Testing helpers for RSpec and Minitest with clear tab stops.
+- A deprecated bundle that keeps every classic snippet, each one marked so you know it is old code.
+- Notes that point you to new Rails, Sinatra, and Hanami packs when they are ready.
 
-## Highlights
-- **Scaffolding**: quick templates for classes, modules, `def` blocks, attribute accessors, and struct wrappers.
-- **Enumerable idioms**: ready-made blocks for `each`, `map`, `select`, `inject`, `zip`, and other iterator helpers.
-- **IO & serialization**: snippets for `File.read/foreach`, YAML and Marshal dump/load, globbing, and Forwardable setup.
-- **Testing & tooling**: Benchmark harnesses, Test::Unit stubs, Rake tasks, and command-line usage guards.
-- **File headers**: shebang, UTF-8 encoding pragma, and `:yields:` documentation helper with targeted scopes.
+## Folder Guide
+- `pure-ruby-snippets/snippets/core/core.json` – modern Ruby helpers you should use today.
+- `pure-ruby-snippets/snippets/testing/testing.json` – ready blocks for RSpec and Minitest.
+- `pure-ruby-snippets/snippets/rails/rails.json` – short bridge snippets plus reminders to install the Rails pack later.
+- `pure-ruby-snippets/snippets/deprecated/legacy.json` – every legacy snippet with a clear DEPRECATED tag.
+- `pure-ruby-snippets/MIGRATION.md` – quick steps for moving away from the old bundle.
 
-## Developing the Extension
-1. Open the project in VS Code and press `F5` to start a new Extension Development Host window.
-2. Create or open a `.rb` file and trigger snippet completions through IntelliSense.
-3. Reload the window (`Cmd+R`/`Ctrl+R`) after editing snippets to pick up changes.
+## How To Test
+1. Open this folder in VS Code.
+2. Press `F5` to launch a new Extension Development Host.
+3. Create a Ruby file and trigger snippets from IntelliSense.
+4. Reload the dev window after you edit a snippet file.
 
-To install manually, copy the folder into `~/.vscode/extensions` and restart VS Code. For publishing guidance, see https://code.visualstudio.com/docs.
+## License
+Released under the MIT license. See `LICENSE.md` for the full text.

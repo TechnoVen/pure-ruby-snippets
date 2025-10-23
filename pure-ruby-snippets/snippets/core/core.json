@@ -1,0 +1,50 @@
+{
+    "Ruby Hash Pair": {
+        "prefix": "rb-hash-pair",
+        "body": "${1:key}: ${2:value}${3:, }",
+        "description": "Modern Ruby hash pair using keyword-style syntax"
+    },
+    "Ruby Pattern Match": {
+        "prefix": "rb-pattern-match",
+        "body": [
+            "case ${1:object}",
+            "in { ${2:key}: ${3:value} }",
+            "  ${4:# handle match}",
+            "else",
+            "  ${5:# fallback}",
+            "end"
+        ],
+        "description": "Ruby 3.x pattern matching with hash destructuring"
+    },
+    "Ruby Data Class": {
+        "prefix": "rb-data-class",
+        "body": [
+            "Data.define(:${1:attribute}) do",
+            "  ${2:def call(*)}",
+            "    ${3:# implementation}",
+            "  ${4:end}",
+            "end"
+        ],
+        "description": "Ruby 3.2+ Data class shortcut"
+    },
+    "Ruby Fiber Scheduler": {
+        "prefix": "rb-fiber-async",
+        "body": [
+            "require \"fiber/scheduler\"",
+            "",
+            "Fiber.set_scheduler(Fiber::Scheduler.new)",
+            "",
+            "Fiber.schedule do",
+            "  ${1:# async work here}",
+            "end"
+        ],
+        "description": "Fiber scheduler boilerplate for asynchronous code"
+    },
+    "Ruby Enumerator Lazy Map": {
+        "prefix": "rb-enumerator-lazy",
+        "body": [
+            "${1:collection}.lazy.map { _1 ${2:* 2} }.force"
+        ],
+        "description": "Lazy enumerator pipeline using numbered parameters"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "Rails Controller Action": {
+        "prefix": "rails-controller-act",
+        "body": [
+            "def ${1:action}",
+            "  ${2:@resource} = ${3:Resource}.find(params[:id])",
+            "  ${4:render json: @resource}",
+            "end"
+        ],
+        "description": "Rails 7 controller action using keyword arguments and modern render syntax"
+    },
+    "Rails Legacy Notice": {
+        "prefix": "rails-legacy-note",
+        "body": [
+            "# DEPRECATED: Rails snippets live in legacy extension.",
+            "# Install the upcoming rails-snippets extension for framework-specific coverage."
+        ],
+        "description": "Reminder to migrate to the dedicated rails-snippets extension when available"
+    }
+}

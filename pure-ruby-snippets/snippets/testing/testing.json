@@ -1,0 +1,28 @@
+{
+    "RSpec Example": {
+        "prefix": "rb-rspec-example",
+        "body": [
+            "RSpec.describe ${1:ClassName} do",
+            "  describe \"${2:context}\" do",
+            "    it \"${3:does something}\" do",
+            "      ${4:expect(subject).to be_success}",
+            "    end",
+            "  end",
+            "end"
+        ],
+        "description": "Modern RSpec example block with nested context"
+    },
+    "Minitest Test Case": {
+        "prefix": "rb-minitest-test",
+        "body": [
+            "require \"minitest/autorun\"",
+            "",
+            "class ${1:ExampleTest} < Minitest::Test",
+            "  def test_${2:case_name}",
+            "    ${3:assert_equal expected, actual}",
+            "  end",
+            "end"
+        ],
+        "description": "Minitest test class with a single example"
+    }
+}

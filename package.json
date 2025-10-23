@@ -1,25 +1,42 @@
 {
-    "name": "ruby-snippet",
-    "displayName": "ruby-snippet",
-    "description": "converted form textmate bundle",
-    "version": "0.0.1",
-    "publisher": "robert",
+    "name": "pure-ruby-snippets",
+    "displayName": "Pure Ruby Snippets",
+    "description": "It is a Ruby snippet collection with structure, deprecations, and Ruby 3.x guidance.",
+    "version": "1.0.0",
+    "publisher": "TechnoVen // Ahmed Nadir",
     "engines": {
-        "vscode": "^0.10.10"
+        "vscode": "^1.70.0"
     },
     "categories": [
         "Snippets"
     ],
-    "homepage": "https://github.com/magicwhite/ruby-snippet",
+    "keywords": [
+        "ruby",
+        "legacy",
+        "snippets"
+    ],
+    "homepage": "https://github.com/TechnoVen/ruby-snippet",
     "repository": {
         "type": "git",
-        "url": "https://github.com/magicwhite/ruby-snippet.git"
+        "url": "https://github.com/TechnoVen/ruby-snippet.git"
     },
     "contributes": {
         "snippets": [
             {
                 "language": "ruby",
-                "path": "./snippets/snippets.json"
+                "path": "./pure-ruby-snippets/snippets/core/core.json"
+            },
+            {
+                "language": "ruby",
+                "path": "./pure-ruby-snippets/snippets/rails/rails.json"
+            },
+            {
+                "language": "ruby",
+                "path": "./pure-ruby-snippets/snippets/testing/testing.json"
+            },
+            {
+                "language": "ruby",
+                "path": "./pure-ruby-snippets/snippets/deprecated/legacy.json"
             }
         ]
     }
